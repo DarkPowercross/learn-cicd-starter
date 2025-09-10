@@ -41,4 +41,4 @@ jobs:
             --tag ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/notely-ar-repo/notely:v1 .
       
       - name: Deploy to Cloud Run
-        run: gcloud run deploy notely --image ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/notely-ar-repo/notely:v1 --region ${{ secrets.GCP_PROJECT_ID }} --allow-unauthenticated --project ${{ secrets.GCP_PROJECT_ID }} --max-instances=4
+        run: gcloud run deploy notely --image ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/notely-ar-repo/notely:v1 --region ${{ secrets.GCP_REGION }} --allow-unauthenticated --project ${{ secrets.GCP_PROJECT_ID }} --max-instances=4
