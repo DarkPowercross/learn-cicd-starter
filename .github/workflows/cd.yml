@@ -37,6 +37,5 @@ jobs:
         
       - name: Build and push Docker image
         run: |
-          IMAGE="${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/notely-ar-repo/notely:v1"
-          docker build -t $IMAGE .
-          docker push $IMAGE
+            gcloud builds submit \
+            --tag ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/notely-ar-repo/notely:v1 .
